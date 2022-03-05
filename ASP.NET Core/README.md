@@ -20,7 +20,42 @@ So since dotnet has ready templates that you can reuse I used the `dotnet new` t
 ```sh
 dotnet new mvc -n <Project-Name>
 ```
-
+## Quick Start
+To run this project you will need follow through these steps:
+- first to restore dependencies specified in a .NET project by running:
+```sh
+dotnet restore 
+```
+- Build a .NET project:
+>`-c` The configuration to use for building the project. The default for most projects is 'Debug'.
+>`-o` The output directory to place built artifacts in.
+```sh
+dotnet build -c Release -o <build-path>
+```
+- Once the build is done you can publish your dll to be deployed:
+```sh
+dotnet publish -c Release -o <build-path>
+```
+- Now that you are done you are one step ahead go to the directory specified for the -o flag and run:
+```sh
+dotnet <app-name>.dll
+```
+You must get a similar result to this:
+```sh
+PS C:\app> dotnet .\Demo.dll      
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: https://localhost:5001       
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: C:\app\
+info: Microsoft.Hosting.Lifetime[0]  
+      Application is shutting down...
+```
 
 ### Additional Information
 You can generate gitignore file by running:
