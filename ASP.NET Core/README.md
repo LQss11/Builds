@@ -16,7 +16,7 @@ Make sure to install the the folowing dotnet components:
 ## Built with
 In this section you will find the commands and the steps taken to setup this project from scratch make, make sure to refer on the <a href="#Prerequisites">Prerequisites Section</a> to setup your environment before you start.
 
-So since dotnet has ready templates that you can reuse I used the `dotnet new` to initialize this project you can run that to check the available templates on your machine, in this example I used mvc template by running:
+So since dotnet has ready templates that you can reuse I used the `dotnet new` to initialize this project you can run that to check the available templates on your machine, in this example I used `MVC` template and called the proeject `Demo` you can name it whatever you want by running:
 ```sh
-dotnet new mvc <Project-Name>
+dotnet new mvc -n <Project-Name>
 ```
