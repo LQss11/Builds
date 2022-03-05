@@ -20,3 +20,10 @@ So since dotnet has ready templates that you can reuse I used the `dotnet new` t
 ```sh
 dotnet new mvc -n <Project-Name>
 ```
+
+
+### Additional Information
+You can generate gitignore file by running:
+```sh
+dotnet new gitignore
+```
