@@ -29,3 +29,8 @@ Email - [affessalem@hotmail.fr](mailto:affessalem@hotmail.fr)
 
 Linkedin - [https://www.linkedin.com/in/salem-affes/](https://www.linkedin.com/in/salem-affes/)
 
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
