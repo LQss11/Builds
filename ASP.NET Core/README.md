@@ -10,8 +10,12 @@ You can follow through the steps in the instructions in order to get a better id
 Make sure to install the the folowing dotnet components:
 * .NET RUNTIME (used to run apps created with .NET) you can run `dotnet --list-runtimes` for installed runtimes. 
 * .NET SDK (used to build and publish .NET apps) you can run `dotnet --list-sdks` for installed SDKs.
-
+* Make sure to [install Docker](https://docs.docker.com/engine/install/ubuntu/) on your machine if you are willing to containerize the application.
 **You can follow steps through [link](https://docs.microsoft.com/en-us/dotnet/core/install/) from the official Microsoft web page**
+
+You can also find a full documentation about the dockerimages used in this example:
+- [.NET SDK](https://hub.docker.com/_/microsoft-dotnet-sdk/)
+- [ASP.NET Core Runtime](https://hub.docker.com/_/microsoft-dotnet-aspnet)
 
 ## Built with
 In this section you will find the commands and the steps taken to setup this project from scratch make, make sure to refer on the <a href="#Prerequisites">Prerequisites Section</a> to setup your environment before you start.
@@ -57,8 +61,21 @@ info: Microsoft.Hosting.Lifetime[0]
       Application is shutting down...
 ```
 
+## Docker
+In this example we used docker to containerize our project and to do so we need a `Dockerfile` to build the image then run it.
+
+The setup is easy and simple just run:
+>Make sure to update Demo.dll to your project's dll name!
+```sh
+docker build -t <image-tag> .
+```
+Then start the container using the image create:
+```sh
+docker run -d 
+```
 ### Additional Information
 You can generate gitignore file by running:
 ```sh
 dotnet new gitignore
 ```
+- You can find additional information and examples in this repo [repo](https://github.com/amoraitis/TodoList)
