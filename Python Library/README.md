@@ -6,11 +6,14 @@ You can follow through the steps in the instructions in order to get a better id
 ## Quick Start
 To run this project you will need follow through these steps:
 - first we are going to create a file `tar.gz` format:
+```sh
+python3 <path-to-setup.py> sdist
 ```
-# Python3 was used in this example you can check by running `python3 --version` or `py --version`
+This will generate a package of the piece of code that we got
+>Python3 was used in this example you can check by running `python3 --version` or `py --version`
 
 - Now that we have our package a dist directory will be generated can then run:
-```
+```sh
 pip install <path-to-package-file>
 ```
 ### Additional Information and links
