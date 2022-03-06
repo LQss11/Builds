@@ -42,8 +42,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
     - [ ] Test
     - [X] Run
     - [X] Containerize
+    - [ ] Github-Actions
 - Python Library
     - [ ] Build & Package
     - [ ] Test
     - [ ] Run
     - [ ] Containerize
+    - [ ] Github-Actions
+
+#### More
+Rename repo to CI-Playground.
