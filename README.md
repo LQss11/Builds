@@ -1,5 +1,5 @@
 ## About The Project
-When it comes to learning and understanding new languages/frameworks/libraries... It usually frustrates me and starts to feel overwhelmed until I just give up, so I decided to make this repo open to everyone to use whenever they want to start **coding** **building** or **testing** that kind of applications.
+When it comes to learning and understanding new languages/frameworks/libraries... It usually frustrates me and starts to feel overwhelmed until I even sometimes give up, so I decided to make this repo open to everyone to use whenever they want to start **coding** **building** or **testing** that kind of applications.
 
 Through each project, I will do my best to be following the best practices and try to containerize those projects using docker for people who don't want to waste time on env setup.
 
@@ -34,3 +34,16 @@ Linkedin - [https://www.linkedin.com/in/salem-affes/](https://www.linkedin.com/i
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
+
+### Projects Workflow
+- ASP.NET Core
+    - [X] Build & Package
+    - [ ] Test
+    - [X] Run
+    - [X] Containerize
+- Python Library
+    - [ ] Build & Package
+    - [ ] Test
+    - [ ] Run
+    - [ ] Containerize
