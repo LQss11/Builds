@@ -7,5 +7,5 @@ setup(
     author="Simon Willison",
     url="https://github.com/simonw/...",
     license="Apache License, Version 2.0",    
-    py_modules=["pids"],
+    py_modules=["baseconverter"], # This is the what the setup will package (filename.py must exist within the working dir where you executed)
 )
