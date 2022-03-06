@@ -67,12 +67,13 @@ In this example we used docker to containerize our project and to do so we need 
 The setup is easy and simple just run:
 >Make sure to update Demo.dll to your project's dll name!
 ```sh
-docker build -t <image-tag> .
+docker build -t <image-name> .
 ```
 Then start the container using the image create:
 ```sh
-docker run -d 
+docker run -d -p 8080:80 <image-name>
 ```
+then try running localhost:8080 on your host machine.
 ### Additional Information
 You can generate gitignore file by running:
 ```sh
