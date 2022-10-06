@@ -80,3 +80,12 @@ You can generate gitignore file by running:
 dotnet new gitignore
 ```
 - You can find additional information and examples in this repo [repo](https://github.com/amoraitis/TodoList)
+### Switch dotnet version
+In case you want to run your dotnet project with a different version than the one you are currently using simply add a file in the project root directory with the name **global.json** with the following content:
+```json
+{
+  "sdk": {
+    "version": "VERSION"
+  }
+}
+```
