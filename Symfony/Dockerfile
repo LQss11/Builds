@@ -1,9 +1,24 @@
-FROM symfony
+FROM php:7.4-fpm
 
-COPY hello-world /var/www/html
+RUN apt-get update \
+    && apt-get install -y \
+        git \
+        wget \
+        unzip \
+        libicu-dev \
+        libpq-dev \
+    && docker-php-ext-install \
+        intl \
+        pdo \
+        pdo_mysql \
+        pdo_pgsql \
+    && pecl install \
+        apcu \
+    && docker-php-ext-enable \
+        apcu 
 
-RUN composer install --no-scripts --no-progress --prefer-dist
+COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
-RUN composer require symfony/web-server-bundle --dev ^4.4.2 --no-scripts --no-progress --prefer-dist
-
-CMD ["php-fpm"]
+# Install symfony cli
+RUN wget https://get.symfony.com/cli/installer -O - | bash \
+    && mv /root/.symfony5/bin/symfony /usr/local/bin/symfony

@@ -1,11 +1,14 @@
 # Symfony
 You can follow these commands to initialize a new symfony application and run it:
 ```sh
-docker build -t symfony -f Dockerfile.symfony .
+docker build -t symfony -f Dockerfile .
+docker run -it --rm -v ${pwd}:/var/www/html -w /var/www/html symfony bash
+composer create-project symfony/website-skeleton hello-world '5.4.*'
+exit
 # Start serving the application
 docker-compose up
+docker exec -it symfony bash
 # To debug stuff you can run
-docker run -it --rm -v ${pwd}/hello-world:/var/www/html -p 9090:9000 -p 9091:8000 -w /var/www/html symfony bash
 ```
 
 ## Hello world
