@@ -7,11 +7,12 @@ services:
     ports:
       - "9091:8000"
     command: "symfony server:start"
+    environment:
+      - DATABASE_URL="mysql://root:root@mysql:3306/${PROJECT_NAME}?serverVersion=8&charset=utf8mb4"
     volumes:
-      - ./hello-world:/var/www/html
-  #   depends_on:
-  #     - db
-
+      - ./projects/${PROJECT_NAME}:/var/www/html
+    env_file:
+      - .env
   mysql:
     image: mysql
     container_name: mysql
@@ -20,7 +21,7 @@ services:
       - mysql-storage:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=mydb #Initial database
+      - MYSQL_DATABASE=${PROJECT_NAME} #Initial database
     # ports:
     #   - '3306:3306'   
   phpmyadmin:

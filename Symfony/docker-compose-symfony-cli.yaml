@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  symfony-cli:
+    container_name: symfony-cli
+    build: .
+    command: "tail -f /dev/null"
+    tty: true
+    volumes:
+      - ./projects:/var/www/html
+    env_file:
+      - .env
