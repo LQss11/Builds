@@ -12,11 +12,8 @@ You can follow these commands to initialize a new symfony application and run it
 ```sh
 docker build -t symfony -f Dockerfile .
 docker run -it --rm -v ${pwd}:/var/www/html -w /var/www/html symfony bash
-composer create-project symfony/website-skeleton my_project_directory '5.4.*'
 cd my_project_directory
-# Run this if you clone a project from git and need to reinstall all the packages
-composer install
-symfony server:start
+
 ```
 # Docker compose
 Before running make sure you update the **.env** which contains the project name that you are willing to create.
@@ -26,6 +23,13 @@ You can run this docker compose and get access to the container where you have s
 ```sh
 docker-compose -f docker-compose-symfony-cli.yaml up -d
 docker exec -it symfony-cli bash
+# Create a new project
+composer create-project symfony/website-skeleton ${PROJECT_NAME} '5.4.*'
+# Run this if you clone a project from git and need to reinstall all the packages
+cd ${PROJECT_NAME}
+composer install
+# Start serving
+symfony server:start
 ```
 ## Start Serving
 Once done run the following commands:
