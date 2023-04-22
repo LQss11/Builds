@@ -1,20 +1,39 @@
 # Symfony
-You can follow these commands to initialize a new symfony application and run it:
+## Create project
+In order to create a symfony project you can run one the following commands:
+```sh
+create-project symfony/website-skeleton my_project_directory '5.4.*'
+create-project symfony/skeleton:"^5.4" my_project_directory
+composer new my_project_directory --version=5.4
+```
+# Docker
+You can follow these commands to initialize a new symfony application and run it using the docker container configured for creating and running symfony projects.
+## Create new project
 ```sh
 docker build -t symfony -f Dockerfile .
 docker run -it --rm -v ${pwd}:/var/www/html -w /var/www/html symfony bash
-composer create-project symfony/website-skeleton hello-world '5.4.*'
-# Or
-composer create-project symfony/skeleton:"^5.4" my_project_directory
-# Or you can build with symfony binaries
-symfony new my_project_directory --version=5.4
-exit
+composer create-project symfony/website-skeleton my_project_directory '5.4.*'
+cd my_project_directory
+# Run this if you clone a project from git and need to reinstall all the packages
+composer install
+symfony server:start
+```
+# Docker compose
+Before running make sure you update the **.env** which contains the project name that you are willing to create.
+
+## Symfony cli with compose
+You can run this docker compose and get access to the container where you have symfony cli to run commands and start serving:
+```sh
+docker-compose -f docker-compose-symfony-cli.yaml up -d
+docker exec -it symfony-cli bash
+```
+## Start Serving
+Once done run the following commands:
+```sh
+
 # Start serving the application
 docker-compose up
 docker exec -it symfony bash
-composer install
-symfony server:start
-# To debug stuff you can run
 ```
 
 You can create entities in 2 different ways:
