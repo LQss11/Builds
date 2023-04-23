@@ -28,8 +28,6 @@ composer create-project symfony/website-skeleton ${PROJECT_NAME} '5.4.*'
 # Run this if you clone a project from git and need to reinstall all the packages
 cd ${PROJECT_NAME}
 composer install
-# Start serving
-symfony server:start
 ```
 ## Start Serving
 Once done run the following commands:
@@ -40,6 +38,12 @@ docker-compose up
 docker exec -it symfony bash
 ```
 
+# Symfony commands:
+Create new bundle for backoffice
+```sh
+composer require symfony/maker-bundle --dev
+bin/console make:bundle
+```
 You can create entities in 2 different ways:
 ```sh
 # Create entity from scratch
