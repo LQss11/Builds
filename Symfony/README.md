@@ -62,7 +62,12 @@ php bin/console make:controller ProductController
 ```
 You can query database directly by running:
 ```sh
-php bin/console dbal:run-sql 'SELECT * FROM product'
+php bin/console dbal:run-sql 'SELECT * FROM reclamation'
+```
+# Routing
+You can get all routes by running this command:
+```sh
+php bin/console debug:router
 ```
 ## Hello world
 Create a new controller class  **src/Controller/HelloController.php**:
@@ -90,3 +95,6 @@ hello:
     path: /hello
     controller: App\Controller\HelloController::index
 ```
+
+### Additional information
+You can get some bootstrap websites for free from [here](https://startbootstrap.com/themes)
